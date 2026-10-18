@@ -284,14 +284,9 @@ src/main/java/com/bookworm/
 
 ---
 
-## 👨‍💻 Built With IBM BOB
+## 👨‍💻 IDE :  IBM BOB
 
-This project was developed using **IBM BOB** (AI-Assisted Agentic IDE) as part of the Applied AI Specialist Capstone Project.
-
-- Wireframe analysis → Entity design
-- OpenAPI spec generation
-- Spring Boot code scaffolding
-- AI-assisted debugging and fixes
+ **IBM BOB** (AI-Assisted Agentic IDE) as part of the Applied AI Specialist Capstone Project.
 
 ---
 
