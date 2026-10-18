@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+
+  # ── PostgreSQL Database ──────────────────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    container_name: bookworm-db
+    environment:
+      POSTGRES_DB: bookworm_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-natwar}
+    ports:
+      - "5432:5432"
+    volumes:
+      - bookworm_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Spring Boot Application ──────────────────────────────────────────────
+  app:
+    build: .
+    container_name: bookworm-app
+    ports:
+      - "8080:8080"
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: bookworm_db
+      DB_USER: postgres
+      DB_PASSWORD: ${DB_PASSWORD:-natwar}
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  bookworm_data:

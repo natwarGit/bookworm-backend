@@ -284,14 +284,32 @@ src/main/java/com/bookworm/
 
 ---
 
-## 👨‍💻 Built With IBM BOB
+## 🐳 Deployment
 
-This project was developed using **IBM BOB** (AI-Assisted Agentic IDE) as part of the Applied AI Specialist Capstone Project.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for full deployment options:
 
-- Wireframe analysis → Entity design
-- OpenAPI spec generation
-- Spring Boot code scaffolding
-- AI-assisted debugging and fixes
+| Option | Command | Where |
+|---|---|---|
+| **Local Maven** | `mvn clean spring-boot:run` | Your machine ✅ |
+| **Docker** | `docker-compose up --build` | Local container |
+| **JAR** | `java -jar target/bookworm-backend-*.jar` | Any Java 17 host |
+| **Cloud** | OpenShift / ROSA | IBM ROKS / AWS |
+
+---
+
+## 🤖 Built With IBM BOB (AI-Assisted Development)
+
+This project was developed using **IBM BOB** Agentic IDE as part of the Applied AI Specialist Capstone Project. IBM BOB was used at every stage:
+
+| Stage | IBM BOB Prompt Used | Output |
+|---|---|---|
+| **Wireframe Analysis** | "Analyze these wireframes and identify all data entities" | 10 JPA entities designed |
+| **API Spec** | "Generate OpenAPI 3.0 spec for this e-bookstore" | `openapi.yaml` with 18 endpoints |
+| **Entity Generation** | "Generate Spring Boot JPA entity for Order with 48hr cancellation" | `Order.java` with `@PrePersist` |
+| **Service Logic** | "Generate PaymentService with duplicate prevention and transaction ID" | `PaymentService.java` |
+| **Bug Fix** | "Fix: lower(bytea) does not exist in PostgreSQL JPQL query" | Fixed `BookRepository.java` JPQL |
+| **Documentation** | "Generate README with startup guide and all API endpoints" | `README.md` |
+| **Deployment** | "Generate Dockerfile using Red Hat UBI9 base image" | `Dockerfile` + `docker-compose.yml` |
 
 ## Github has two branches : 
 ---
