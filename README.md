@@ -41,7 +41,7 @@ spring.datasource.username=${DB_USER:postgres}
 spring.datasource.password=${DB_PASSWORD:######}
 ```
 
-> Change `natwar` to your actual PostgreSQL password if different.
+
 
 ---
 
