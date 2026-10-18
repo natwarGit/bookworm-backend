@@ -293,7 +293,7 @@ This project was developed using **IBM BOB** (AI-Assisted Agentic IDE) as part o
 - Spring Boot code scaffolding
 - AI-assisted debugging and fixes
 
-## Github has teo branches : 
+## Github has two branches : 
 ---
 
 *Book Worm Backend — IBM BOB Capstone Project*
